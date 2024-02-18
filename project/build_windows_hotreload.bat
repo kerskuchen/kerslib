@@ -4,12 +4,13 @@ if not defined DevEnvDir (
 call "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
 )
 
-clang -g main_sdl.cc -o bin/launcher.exe -lSDL2main -lSDL2 -Xlinker /subsystem:console -MJ compile_commands.json
+if not exist build mkdir build
+
+clang -g main_sdl.cc -o build/launcher.exe -lSDL2main -lSDL2 -Xlinker /subsystem:console -MJ build/compile_commands.json
 
 exit
 
-if not exist bin mkdir bin
-pushd bin
+pushd build
 if exist trash del /S /Q trash > NUL 2> NUL
 if not exist trash mkdir trash
 

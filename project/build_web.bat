@@ -2,6 +2,7 @@
 
 if not exist build mkdir build
 
+robocopy .\kerslib .\build "index.html"
 
 REM Load build flags
 pushd "%~dp0"

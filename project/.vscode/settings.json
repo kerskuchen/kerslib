@@ -1,5 +1,7 @@
 {
     "search.exclude": {
-        "kerslib/thirdparty/**": true
+        "kerslib/thirdparty/**": true,
+        "build/**": true,
+        ".vscode/**": true
     }
 }

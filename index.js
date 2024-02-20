@@ -30,12 +30,13 @@ function PlatformDrawRect(x, y, width, height, colorUint32) {
 function PlatformPanic(filepathCString, line, messageCString) {
     const filepath = CStringToString(filepathCString);
     const message = CStringToString(messageCString);
-    console.error(`${filepath}:${line} - ${message}`);
+    console.error(`${message} -- ${filepath}:${line}`);
 }
 
-function PlatformLog(messageCString) {
+function PlatformLog(filepathCString, line, messageCString) {
+    const filepath = CStringToString(filepathCString);
     const message = CStringToString(messageCString);
-    console.log(`[INFO] ${message}`);
+    console.log(`${message} -- ${filepath}:${line}`);
 }
 
 let timestampPrevious = null;
